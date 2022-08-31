@@ -1,0 +1,20 @@
+name,species,nameCommon,Sex,length,age,forageMode,temperment,Idcode,privateSnakeName
+Squishy,Oxyuranus scutellatus,Coastal Taipan,m,2.2,22,active,domesticated,OS1,same as official
+Boss,Oxyuranus scutellatus,Coastal Taipan,f,1.8,14,active,alert,OS2,same as official
+Fibonacci,Oxyuranus scutellatus,Coastal Taipan,m,1.6,11,active,alert,OS3,same as official
+Lower Jaw,Oxyuranus scutellatus,Coastal Taipan,f,1.1,4,active,alert,OS4,same as official
+Mawa,Oxyuranus scutellatus,Coastal Taipan,m,1.1,4,active,alert,OS5,same as official
+Lumpy,Oxyuranus scutellatus,Coastal Taipan,m,1.4,11,active,alert,OS6,same as official
+Upgrade,Pseudonaja textilis,Eastern Brown Snake,m,1.8,12,active,alert,PT1,same as official
+El Diablo,Pseudonaja affinis,Dugite,m,1.2,15,active,alert,PAF1,same as official
+Mr Naughty,Pseudonaja affinis,Dugite,m,1.2,15,active,domesticated,PAF2,same as official
+Perth Girl,Acanthophis antarcticus,Common Death Adder,f,0.35,6,ambush,unknown,AA1,same as official
+Briggs,Acanthophis antarcticus,Common Death Adder,m,0.4,8,ambush,unknown,AA2,Brigalow Boy
+Glory,Acanthophis antarcticus,Common Death Adder,m,0.4,6,ambush,unknown,AA3,Glorious Boy
+Dull Sister,Acanthophis rugosus,Rough-scaled Death Adder,f,0.6,7,ambush,unknown,AA4,same as official
+Bright Sister,Acanthophis rugosus,Rough-scaled Death Adder,f,0.6,7,ambush,unknown,AA5,same as official
+Bitey Boy,Aspidites ramsayi,Woma Python,m,1,10,constriction,domesticated,AR2,same as official
+Dorsal Girl,Aspidites ramsayi,Woma Python,f,1,10,constriction,domesticated,AR3,same as official
+Elapid Boy,Aspidites ramsayi,Woma Python,m,0.9,8,constriction,alert,AR4,same as official
+Casper,Hoplocephalus bitorquatus,Pale-headed Snake,m,0.35,5,arboreal,moderate,HB1,same as official
+Chris' Hoplo,Hoplocephalus bitorquatus,Pale-headed Snake,m,0.38,7,arboreal,moderate,HB2,same as official

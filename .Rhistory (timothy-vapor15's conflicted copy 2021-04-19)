@@ -1,0 +1,512 @@
+trueRich[2]/trueRich[3]),
+xlim=c(0.5,3.5), ylim=c(0,0.5),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+boxplot((dH0 / aH0), add=TRUE, at=0.8, boxwex=0.25)
+boxplot((dH1 / aH1), add=TRUE, at=1, boxwex=0.25)
+boxplot((dH2 / aH2), add=TRUE, at=1.2, boxwex=0.25)
+boxplot((dH0 / rH0), add=TRUE, at=1.8, boxwex=0.25)
+boxplot((dH1 / rH1), add=TRUE, at=2, boxwex=0.25)
+boxplot((dH2 / rH2), add=TRUE, at=2.2, boxwex=0.25)
+boxplot((aH0 / rH0), add=TRUE, at=2.8, boxwex=0.25)
+boxplot((aH1 / rH1), add=TRUE, at=3, boxwex=0.25)
+boxplot((aH2 / rH2), add=TRUE, at=3.2, boxwex=0.25)
+plot(x=1:3, y=c(trueRich[1]/trueRich[2],
+trueRich[1]/trueRich[3],
+trueRich[2]/trueRich[3]),
+xlim=c(0.5,3.5), ylim=c(0,0.75),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+boxplot((dH0 / aH0), add=TRUE, at=0.8, boxwex=0.25)
+boxplot((dH1 / aH1), add=TRUE, at=1, boxwex=0.25)
+boxplot((dH2 / aH2), add=TRUE, at=1.2, boxwex=0.25)
+boxplot((dH0 / rH0), add=TRUE, at=1.8, boxwex=0.25)
+boxplot((dH1 / rH1), add=TRUE, at=2, boxwex=0.25)
+boxplot((dH2 / rH2), add=TRUE, at=2.2, boxwex=0.25)
+boxplot((aH0 / rH0), add=TRUE, at=2.8, boxwex=0.25)
+boxplot((aH1 / rH1), add=TRUE, at=3, boxwex=0.25)
+boxplot((aH2 / rH2), add=TRUE, at=3.2, boxwex=0.25)
+dSizeHill <- estimateD(apply(dSamp, 2, function(x){as.vector(table(x))}))
+aSizeHill <- estimateD(apply(aSamp, 2, function(x){as.vector(table(x))}))
+rSizeHill <- estimateD(apply(rSamp, 2, function(x){as.vector(table(x))}))
+dSizeHill
+?boxplot
+plot(x=1:3, y=c(trueRich[1]/trueRich[2],
+trueRich[1]/trueRich[3],
+trueRich[2]/trueRich[3]),
+xlim=c(0.5,3.5), ylim=c(0,0.75),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+boxplot((dH0 / aH0), add=TRUE, at=0.7, boxwex=0.25)
+boxplot((dH1 / aH1), add=TRUE, at=0.8, boxwex=0.25)
+boxplot((dH2 / aH2), add=TRUE, at=0.9, boxwex=0.25)
+plot(x=1:3, y=c(trueRich[1]/trueRich[2],
+trueRich[1]/trueRich[3],
+trueRich[2]/trueRich[3]),
+xlim=c(0.5,3.5), ylim=c(0,0.75),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+boxplot((dH0 / aH0), add=TRUE, at=0.6, boxwex=0.25)
+boxplot((dH1 / aH1), add=TRUE, at=0.75, boxwex=0.25)
+boxplot((dH2 / aH2), add=TRUE, at=0.9, boxwex=0.25)
+dSH0 <- dSizeHill$qD[dSizeHill$order==0]
+dSH1 <- dEstD$qD[dSizeHill$order==1]
+dSH2 <- dSizeHill$qD[dSizeHill$order==2]
+aSH0 <- aSizeHill$qD[aSizeHill$order==0][1:length(dSH0)]
+aSH1 <- aSizeHill$qD[aSizeHill$order==1][1:length(dSH1)]
+aSH2 <- aSizeHill$qD[aSizeHill$order==2][1:length(dSH2)]
+rSH0 <- rSizeHill$qD[rSizeHill$order==0][1:length(dSH0)]
+rSH1 <- rSizeHill$qD[rSizeHill$order==1][1:length(dSH1)]
+rSH2 <- rSizeHill$qD[rSizeHill$order==2][1:length(dSH2)]
+plot(x=1:3, y=c(trueRich[1]/trueRich[2],
+trueRich[1]/trueRich[3],
+trueRich[2]/trueRich[3]),
+xlim=c(0.5,3.5), ylim=c(0,0.75),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+# depauperate versus average boxes
+boxplot((dSH0 / aSH0), add=TRUE, at=0.6, boxwex=0.25)
+boxplot((dSH1 / aSH1), add=TRUE, at=0.75, boxwex=0.25)
+boxplot((dSH2 / aSH2), add=TRUE, at=0.9, boxwex=0.25)
+plot(x=1:3, y=c(trueRich[1]/trueRich[2],
+trueRich[1]/trueRich[3],
+trueRich[2]/trueRich[3]),
+xlim=c(0.5,3.5), ylim=c(0,0.75),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+# depauperate versus average boxes
+boxplot((dSH0 / aSH0), add=TRUE, at=0.6, boxwex=0.25)
+boxplot((dSH1 / aSH1), add=TRUE, at=0.75, boxwex=0.25)
+boxplot((dSH2 / aSH2), add=TRUE, at=0.9, boxwex=0.25)
+boxplot((dH0 / aH0), add=TRUE, at=1.1, boxwex=0.25)
+boxplot((dH1 / aH1), add=TRUE, at=0.25, boxwex=0.25)
+boxplot((dH2 / aH2), add=TRUE, at=1.4, boxwex=0.25)
+(dSH0 / aSH0)
+(dSH0 / aSH0) / (trueRich[1]/trueRich[2])
+plot(x=1:3, y=1,
+xlim=c(0.5,3.5), ylim=c(0,0.75),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,0.75),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="31")
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="31")
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxplot((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), add=TRUE, at=0.6, boxwex=0.25)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxplot((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), add=TRUE, at=0.6, boxwex=0.25)
+boxplot((dSH1 / aSH1) / (trueRich[1]/trueRich[2]), add=TRUE, at=0.75, boxwex=0.25)
+boxplot((dSH2 / aSH2) / (trueRich[1]/trueRich[2]), add=TRUE, at=0.9, boxwex=0.25)
+boxplot((dH0 / aH0) / (trueRich[1]/trueRich[2]), add=TRUE, at=1.1, boxwex=0.25)
+boxplot((dH1 / aH1) / (trueRich[1]/trueRich[2]), add=TRUE, at=0.25, boxwex=0.25)
+boxplot((dH2 / aH2) / (trueRich[1]/trueRich[2]), add=TRUE, at=1.4, boxwex=0.25)
+?boxplot
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.25, axes=FALSE)}
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.25, axes=FALSE)}
+boxAdd((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), at=0.6)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.25, axes=FALSE)}
+boxAdd((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), at=0.6)
+boxAdd((dSH1 / aSH1) / (trueRich[1]/trueRich[2]), at=0.75)
+boxAdd((dSH2 / aSH2) / (trueRich[1]/trueRich[2]), at=0.9)
+(dSH2 / aSH2)
+dSH2
+aSH2
+aH1
+dH1
+(dH1 / aH1)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.25, axes=FALSE)}
+boxAdd((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), at=0.6)
+boxAdd((dSH1 / aSH1) / (trueRich[1]/trueRich[2]), at=0.75)
+boxAdd((dSH2 / aSH2) / (trueRich[1]/trueRich[2]), at=0.9)
+boxAdd((dH0 / aH0) / (trueRich[1]/trueRich[2]), at=1.1)
+boxAdd((dH1 / aH1) / (trueRich[1]/trueRich[2]), at=1.25)
+boxAdd((dH2 / aH2) / (trueRich[1]/trueRich[2]), at=1.4)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.25, axes=FALSE)}
+boxAdd((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), at=0.6)
+boxAdd((dSH1 / aSH1) / (trueRich[1]/trueRich[2]), at=0.75)
+boxAdd((dSH2 / aSH2) / (trueRich[1]/trueRich[2]), at=0.9)
+boxAdd((dH0 / aH0) / (trueRich[1]/trueRich[2]), at=1.1)
+boxAdd((dH1 / aH1) / (trueRich[1]/trueRich[2]), at=1.25)
+boxAdd((dH2 / aH2) / (trueRich[1]/trueRich[2]), at=1.4)
+boxAdd((dSH0 / rSH0) / (trueRich[1]/trueRich[3]), at=1.6)
+boxAdd((dSH1 / rSH1) / (trueRich[1]/trueRich[3]), at=1.75)
+boxAdd((dSH2 / rSH2) / (trueRich[1]/trueRich[3]), at=1.9)
+boxAdd((dH0 / rH0) / (trueRich[1]/trueRich[3]), at=2.1)
+boxAdd((dH1 / rH1) / (trueRich[1]/trueRich[3]), at=2.25)
+boxAdd((dH2 / rH2) / (trueRich[1]/trueRich[3]), at=2.4)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.15, axes=FALSE)}
+boxAdd((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), at=0.6)
+boxAdd((dSH1 / aSH1) / (trueRich[1]/trueRich[2]), at=0.75)
+boxAdd((dSH2 / aSH2) / (trueRich[1]/trueRich[2]), at=0.9)
+boxAdd((dH0 / aH0) / (trueRich[1]/trueRich[2]), at=1.1)
+boxAdd((dH1 / aH1) / (trueRich[1]/trueRich[2]), at=1.25)
+boxAdd((dH2 / aH2) / (trueRich[1]/trueRich[2]), at=1.4)
+boxAdd((dSH0 / rSH0) / (trueRich[1]/trueRich[3]), at=1.6)
+boxAdd((dSH1 / rSH1) / (trueRich[1]/trueRich[3]), at=1.75)
+boxAdd((dSH2 / rSH2) / (trueRich[1]/trueRich[3]), at=1.9)
+boxAdd((dH0 / rH0) / (trueRich[1]/trueRich[3]), at=2.1)
+boxAdd((dH1 / rH1) / (trueRich[1]/trueRich[3]), at=2.25)
+boxAdd((dH2 / rH2) / (trueRich[1]/trueRich[3]), at=2.4)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.15, axes=FALSE)}
+boxAdd((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), at=0.7)
+boxAdd((dSH1 / aSH1) / (trueRich[1]/trueRich[2]), at=0.8)
+boxAdd((dSH2 / aSH2) / (trueRich[1]/trueRich[2]), at=0.9)
+boxAdd((dH0 / aH0) / (trueRich[1]/trueRich[2]), at=1.1)
+boxAdd((dH1 / aH1) / (trueRich[1]/trueRich[2]), at=1.2)
+boxAdd((dH2 / aH2) / (trueRich[1]/trueRich[2]), at=1.3)
+boxAdd((dSH0 / rSH0) / (trueRich[1]/trueRich[3]), at=1.6)
+boxAdd((dSH1 / rSH1) / (trueRich[1]/trueRich[3]), at=1.75)
+boxAdd((dSH2 / rSH2) / (trueRich[1]/trueRich[3]), at=1.9)
+boxAdd((dH0 / rH0) / (trueRich[1]/trueRich[3]), at=2.1)
+boxAdd((dH1 / rH1) / (trueRich[1]/trueRich[3]), at=2.25)
+boxAdd((dH2 / rH2) / (trueRich[1]/trueRich[3]), at=2.4)
+plot(x=1:3, y=rep(1,3),
+xlim=c(0.5,3.5), ylim=c(0,2),
+ylab="Richness ratio", xlab="", xaxt="n", pch=16, cex=2)
+axis(side=1, at=1:3, labels=c("dep:av", "dep:rich", "av:rich"))
+abline(h=1, lty="dashed")
+# depauperate versus average boxes
+boxAdd <- function(x, at){boxplot(x, add=TRUE, at=at, boxwex=0.15, axes=FALSE)}
+boxAdd((dSH0 / aSH0) / (trueRich[1]/trueRich[2]), at=0.7)
+boxAdd((dSH1 / aSH1) / (trueRich[1]/trueRich[2]), at=0.8)
+boxAdd((dSH2 / aSH2) / (trueRich[1]/trueRich[2]), at=0.9)
+boxAdd((dH0 / aH0) / (trueRich[1]/trueRich[2]), at=1.1)
+boxAdd((dH1 / aH1) / (trueRich[1]/trueRich[2]), at=1.2)
+boxAdd((dH2 / aH2) / (trueRich[1]/trueRich[2]), at=1.3)
+boxAdd((dSH0 / rSH0) / (trueRich[1]/trueRich[3]), at=1.7)
+boxAdd((dSH1 / rSH1) / (trueRich[1]/trueRich[3]), at=1.8)
+boxAdd((dSH2 / rSH2) / (trueRich[1]/trueRich[3]), at=1.9)
+boxAdd((dH0 / rH0) / (trueRich[1]/trueRich[3]), at=2.1)
+boxAdd((dH1 / rH1) / (trueRich[1]/trueRich[3]), at=2.2)
+boxAdd((dH2 / rH2) / (trueRich[1]/trueRich[3]), at=2.3)
+boxAdd((aSH0 / rSH0) / (trueRich[2]/trueRich[3]), at=2.7)
+boxAdd((aSH1 / rSH1) / (trueRich[2]/trueRich[3]), at=2.8)
+boxAdd((aSH2 / rSH2) / (trueRich[2]/trueRich[3]), at=2.9)
+boxAdd((aH0 / rH0) / (trueRich[2]/trueRich[3]), at=3.1)
+boxAdd((aH1 / rH1) / (trueRich[2]/trueRich[3]), at=3.2)
+boxAdd((aH2 / rH2) / (trueRich[2]/trueRich[3]), at=3.3)
+?show
+?contains
+??contains
+install.packages("rlang")
+library(rlang)
+version(rlang)
+citation(rlang)
+citation("rlang")
+install.packages("pillar")
+library(mgcv)
+?s
+# Sound garden
+rm(list=ls())
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#setwd()
+library(sound)
+library(vcd)
+library(performance)
+library(brms)
+library(vegan)
+# source functions from 'functions' sub-folder
+sapply(paste0("./functions/", list.files("./functions")), source)
+# DATA INPUT ####
+sg <- read.csv("./data/210122_SoundGardenData.csv",
+stringsAsFactors = TRUE)
+# convert factors to numbers
+numVars <- c("tongueFlickCount", "freezeBehaviourCount", "headJerkCount",
+"headMovementLeftDirection", "headMovementRightDirection",
+"headMovementTowardSpeaker", "headMovementAwayFromSpeaker",
+"headMovementDistanceTotal", "Fixation.behaviour.", "hissesNumber",
+"parascoping", "lowerJawDrop")
+sg[,numVars] = sapply(numVars, function(x){
+as.numeric(as.character(sg[,x]))
+})
+# remove familiarization block
+sg <- sg[sg$trialBlock != "0",]
+# merge in snake reference table data
+snake <- read.csv("./data/snakeRefTable.csv")
+snakeCols <- read.csv("./data/colours.csv")
+snake$genus <- substr(snake$species, 1, regexpr(" ", snake$species)-1)
+sg <- merge(sg, snake,
+by.x="snakeName", by.y="name",
+all.x=TRUE, all.y=FALSE, sort=FALSE)
+sg <- merge(sg, snakeCols[,c(1,3,4)],
+by.x="species", by.y="species",
+all.x=TRUE, all.y=FALSE, sort=FALSE)
+genCols <- sg[!duplicated(sg$genus), c("genus", "colour", "colourL")]
+sg$moveBin <- ifelse(sg$headMovementDistanceTotal > 20, 1, 0)
+# convert exploration behaviour to binary
+sg$cautionaryExplorationBehaviour[sg$cautionaryExplorationBehaviour == ""] = NA
+sg$cautionaryExplorationBehaviour[sg$cautionaryExplorationBehaviour == "na"] = NA
+sg$cautionaryExplorationBehaviour <- droplevels(sg$cautionaryExplorationBehaviour)
+sg$cautionaryExplorationBehaviour <- as.numeric(sg$cautionaryExplorationBehaviour) - 1
+sg$defcautBehav <- sg$freezeBehaviourCount +
+sg$hissesNumber +
+sg$Fixation.behaviour. +
+sg$headJerkCount +
+sg$lowerJawDrop +
+sg$parascoping +
+sg$cautionaryExplorationBehaviour
+sg$defcautBin <- ifelse(sg$defcautBehav > 0, 1, 0)
+sg$tongueBin <- ifelse(sg$tongueFlickCount > 0, 1, 0)
+sg$logAge <- log(sg$age)
+sg$soundFact <- as.factor(sg$soundToPlay)
+# DATA EXPLORATION ####
+boxplot(sg$tongueFlickCount ~ sg$genus, las=2, xlab="", mar=c(6,2,1,1))
+boxplot(sg$headMovementDistanceTotal ~  sg$soundToPlay * sg$snakeName, las=2, xlab="", mar=c(6,2,1,1),
+col = rep(as.factor(snake$species)[match(levels(sg$snakeName), snake$name)], each=4))
+pairs(sg[,c("tongueFlickCount",
+"freezeBehaviourCount", "headJerkCount",
+"headMovementLeftDirection", "headMovementRightDirection",
+"headMovementTowardSpeaker", "headMovementAwayFromSpeaker",
+"headMovementDistanceTotal", "Fixation.behaviour.", "hissesNumber")],
+mar=c(0,0,0,0), oma=c(3,3,3,3))
+cor(sg[,c("tongueFlickCount",
+"freezeBehaviourCount", "headJerkCount",
+"headMovementLeftDirection", "headMovementRightDirection",
+"headMovementTowardSpeaker", "headMovementAwayFromSpeaker",
+"headMovementDistanceTotal", "Fixation.behaviour.", "hissesNumber",
+"parascoping")],
+use="complete.obs")
+hist(sg$tongueFlickCount)
+hist(sg$freezeBehaviourCount)
+hist(sg$headJerkCount)
+hist(sg$headMovementTowardSpeaker)
+sg$colour <- as.character(sg$colour)
+sg$colourL <- as.character(sg$colourL)
+#         comparison of responses ####
+plotX <- seq(0.025,1.05,len=7)[2:6]
+xWidth = 0.045
+sg$soundBin <- ifelse(sg$soundFact == "0", FALSE, TRUE)
+pdf("./plots/behaviour breakdown.pdf", height=5, width=6, useDingbats=FALSE)
+split.screen(rbind(c(0,1,0.6,1),
+cbind(plotX - xWidth, plotX + xWidth, 0.45, 0.6),
+cbind(plotX - xWidth, plotX + xWidth, 0.275, 0.425),
+cbind(plotX - xWidth, plotX + xWidth, 0.1, 0.25)))
+screen(1)
+par(mar=c(0,0,0,0), ps=10)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,1), axes=FALSE, xlab="", ylab="")
+plot.pos <- data.frame(genus = sort(unique(sg$genus)),
+pos = seq(0.165,0.9, len=length(unique(sg$genus))))
+cat <- c("Ambush\nElapid", "Active/arboreal\nPython", "Arboreal\nElapid", "Active Elapid")
+catPos <- c(plot.pos$pos[1:3], mean(plot.pos$pos[4:5]))
+text(y=0.85, x=catPos, adj=0.5, labels=cat)
+segments(y0=0.5, y1=0.75, x0=catPos[1:3], x1=catPos[1:3])
+axis(side=3, line=-2.75, at=plot.pos$pos[4:5], tcl=2, labels=NA)
+gNames <- lapply(split(sg, f=sg$genus), function(test){
+# species names etc
+sp <- as.character(sort(unique(snake$species[snake$genus == test$genus[1]])))
+spCount <- table(as.character(snake$species[snake$genus == test$genus[1]]))
+sp[1] <- gsub(" ", "\n", sp[1])
+sp[-1] <- paste0(substr(sp[-1], 1, 1),". ",
+substr(sp[-1], regexpr(" ", sp[-1])+1, nchar(sp[-1])))
+return(list(sp, spCount))
+})
+gCount <- sapply(gNames, function(x){x[[2]]})
+gNames <- sapply(gNames, function(x){x[[1]]})
+gCol <- as.character(sapply(split(sg, f=sg$genus), function(test){
+col <- snakeCols$colour[grepl(test$genus[1], snakeCols$species)][1]
+#colL <- snakeCols$colourL[grepl(test$genus[1], snakeCols$species)][1]
+#pos <- plot.pos$pos[plot.pos$genus == test$genus[1]] + c(-0.05,0,0.05)
+return(col)
+}))
+gColL <- as.character(sapply(split(sg, f=sg$genus), function(test){
+#col <- snakeCols$colour[grepl(test$genus[1], snakeCols$species)][1]
+colL <- snakeCols$colourL[grepl(test$genus[1], snakeCols$species)][1]
+return(colL)
+}))
+# photo spot
+rect(ybottom=0.25, ytop=0.7,
+xleft=plot.pos$pos-0.1, xright=plot.pos$pos+0.1,
+col="white", border=gCol, lwd=2.5)
+par(lheight=0.75)
+text(x=plot.pos$pos -0.1, y=0.18, labels=sapply(gNames, function(x){x[[1]]}),
+col=gCol, font=3, adj=0, cex=0.8)
+text(x=plot.pos$pos+0.075, y=0.18, labels=paste0("(",sapply(gCount, function(x){x[[1]]}),")"),
+col=gCol, cex=0.8)
+text(x=plot.pos$pos-0.1, y=0.09, labels=sapply(gNames, function(x){ifelse(length(x)<2, "", x[[2]])}),
+col=gCol, font=3, adj=0, cex=0.8)
+tempCount <- sapply(gCount, function(x){ifelse(length(x)<2, NA, x[[2]])})
+text(x=plot.pos$pos+0.075, y=0.09, labels=ifelse(is.na(tempCount),
+"",
+paste0("(",tempCount,")")),
+col=gCol, cex=0.8)
+par(lheight=1)
+# text(x=-0.09, y=spPos, adj=1, col=col, font=3, labels=sp)
+# text(x=-0.065, y=spPos, adj=0.5, col=col, font=1, labels=paste0("(",spCount, ")"))
+# par(lheight=1)
+# Legend
+# text(x=0.25, y=-0.02, adj=0.5,
+#      labels=expression(bold("T")*": > 0 Tongue flicks; "*bold("D")*": > 0 Defensive/cautious behaviors; "*bold("M")*": > 20cm head movement; "*bold("Color")*": behavior observed"))
+close.screen(1)
+# Proportion plots
+sapply(1:3, function(bN){
+var <- c("tongueBin", "defcautBin", "moveBin")[bN]
+tongueTable <- table(sg[,var], sg$soundBin, sg$genus)
+sapply(1:length(gCol), function(n){
+screen(1 + 5 * (bN-1)+n)
+par(mar=c(0,0,0,0), ps=8, tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,1),
+axes=FALSE, xlab="", ylab="", xaxs="i", yaxs="i")
+axis(side=2, at = c(0,0.5,1), las=1, mgp=c(3,0.5,0))
+if(n==1){
+mtext(side=2, line=1.5,
+text=c("Tongue\nflick",
+"Defensive/cautious\nbehavior",
+"Moving\n> 20cm")[bN], las=0)
+}# else {axis(side=2, at = c(0,0.5,1), labels=NA)}
+axis(side=1, at=c(0.25, 0.75), labels=NA)
+if(bN==2 & n==1){
+mtext(side=2, line=3.5, text="Proportion of trials", las=0)
+}
+if(bN==3){
+par(xpd=NA)
+text(x=c(0.25, 0.75), y=relative.axis.point(-0.12, "y"),
+labels= c("Control", "Treatment"), adj=1, srt=45)
+par(xpd=FALSE)
+} else {axis(side=1, at=c(0.25, 0.75), labels=NA)}
+subTab <- tongueTable[,,n]
+subTab <- t(t(subTab) / colSums(subTab))
+# controls
+rect(xleft = 0, xright = 0.5,
+ybottom = c(0, subTab[2,1]),
+ytop = c(subTab[2,1], 1),
+col=c(gCol[n], "white"))
+# treatment
+rect(xleft = 0.5, xright = 1,
+ybottom = c(0, subTab[2,2]),
+ytop = c(subTab[2,2], 1),
+col=c(gCol[n], "white"))
+box()
+close.screen(1 + 5 * (bN-1)+n)
+})
+})
+close.screen(all.screens=TRUE)
+dev.off()
+#         breakdown of defensive/cautious behaviours by genus ####
+defcaut <- sg[,c("freezeBehaviourCount", "hissesNumber", "Fixation.behaviour.",
+"headJerkCount", "lowerJawDrop", "parascoping", "cautionaryExplorationBehaviour")]
+defcaut <- ifelse(defcaut > 0 , 1, 0)
+dcMat <- do.call("rbind", lapply(sort(unique(sg$genus)), function(x){
+subdc <- as.data.frame(defcaut[sg$genus == x,])
+submat <- sapply(subdc, function(y){tapply(y, sg$soundFact[sg$genus==x], sum, na.rm=TRUE)})
+return(data.frame(genus=x,
+soundFact=0:3,
+submat))
+}))
+dcMatProp <- as.data.frame(prop.table(as.matrix(dcMat[,-(1:2)]), 1))
+dcMatProp[is.na(dcMatProp)] = 0
+rownames(dcMatProp) = paste0(dcMat$genus, ":", dcMat$soundFact)
+dcMat$dcCount <- rowSums(dcMat[,-(1:2)])
+dcMat$iszero <- dcMat$dcCount == 0
+dcMatProp <- dcMatProp[!dcMat$iszero,]
+dcOrd <- metaMDS(dcMatProp)
+dcOrdPoints <- dcOrd$points
+dcMatPlot <- dcMat[!dcMat$iszero,]
+pdf("./plots/defcautOrd.pdf", height=4, width=4)
+par(mar=c(2.5,2.5,1,1), ps=8, tcl=-0.25, mgp=c(3,0,0), las=1)
+plot(x=NULL,y=NULL, xlim=c(-1.5,1.3), ylim=c(-1,1), asp=1, yaxt="n", xlab="", ylab="")
+axis(side=2, mgp=c(3,0.5,0))
+mtext(side=1,line=1, text="nMDS 1")
+mtext(side=2,line=1.5, text="nMDS 2", las=0)
+arrows(x0=0, y0=0, x1=dcOrd$species[,1], y1=dcOrd$species[,2], length=0.05, lwd=2)
+text(dcOrd$species, labels=c("Freeze", "Hiss", "Fixation", "Head jerk", "Jaw drop", "Parascoping", "Cautious\nexploration"),
+font=1, pos=c(1, 4, 2, 2, 2, 1, 1), offset=0.25)
+sapply(sort(unique(dcMatPlot$genus)), function(gen){
+subPoints <- dcOrd$points[dcMatPlot$genus == gen,]
+lines(subPoints, col=as.character(genCols$colourL[genCols$genus == gen]), lwd=2)
+})
+points(dcOrdPoints, pch=c(21,22,23,24)[as.factor(dcMatPlot$soundFact)],
+bg=as.character(genCols$colour[match(dcMatPlot$genus, genCols$genus)]),
+cex=ifelse(log(dcMatPlot$dcCount)<1, 1, 2))
+text(dcOrdPoints, labels=dcMatPlot$soundFact,
+col=as.character(genCols$colourL[match(dcMatPlot$genus, genCols$genus)]),
+font=2, cex=1)
+text(x=relative.axis.point(0.01, "x"), y=relative.axis.point(0.03, "y"),
+adj=0, labels=paste0("Stress = ", round(dcOrd$stress, 3)))
+# add some genus labels
+labPoints <- rbind(dcOrdPoints[dcMatPlot$genus == "Acanthophis",][1,],
+dcOrdPoints[dcMatPlot$soundFact == 0,])
+text(labPoints, labels=sort(unique(dcMatPlot$genus)),
+col=as.character(genCols$colour[order(genCols$genus)]),
+pos=c(3,4,3,3,4), font=3, cex=0.85)
+legendYs <- rev(relative.axis.point(seq(0.8,0.97, len=4), "y"))
+legendXs <- relative.axis.point(c(0.68,0.76), "x")
+points(x=rep(relative.axis.point(0.783, "x"), 4),
+y=legendYs,
+pch=21:24, bg="white", cex=1.35)
+text(x=relative.axis.point(0.775, "x"),
+y=legendYs,
+labels=paste0(0:3), adj=0, cex=0.8)
+text(x=relative.axis.point(0.815, "x"),
+y=legendYs,
+labels=c("Control", "0-150Hz", "150-300Hz", "300-450Hz"), adj=0)
+test1 <- Sine(75, 0.025, 10000)
+test2 <- Sine(225, 0.025, 10000)
+test3 <- Sine(375, 0.025, 10000)
+segments(x0=legendXs[1], x1=legendXs[2], y0=legendYs[1], y1=legendYs[1], col="red")
+lines(y=legendYs[2] + test1$sound / 50, x=seq(legendXs[1],legendXs[2], len=length(test1$sound)), col="red")
+lines(y=legendYs[3] +test2$sound / 50, x=seq(legendXs[1],legendXs[2], len=length(test2$sound)), col="red")
+lines(y=legendYs[4] +test3$sound / 50, x=seq(legendXs[1],legendXs[2], len=length(test3$sound)), col="red")
+dev.off()
+# PERMANOVA of def/caut behaviour change
+dcPerm <- adonis2(dcMatProp ~ genus * soundFact, data=dcMatPlot)
+summary(dcPerm)

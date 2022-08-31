@@ -1,0 +1,512 @@
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.3,0.7), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+# species predictions
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=16,
+col=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+# Overall predictions
+segments(x0=defcautPred$pos,
+x1=defcautPred$pos,
+y0=defcautPred$lower,
+y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+abline(h=0, lty="31")
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3.5, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.1,0.9),
+c(0.45,0.95,0.1,0.9)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.275,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+# species predictions
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=16,
+col=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+# Overall predictions
+segments(x0=defcautPred$pos,
+x1=defcautPred$pos,
+y0=defcautPred$lower,
+y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+abline(h=0, lty="31")
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3.5, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.1,0.9),
+c(0.45,0.95,0.1,0.9)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+# species predictions
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=16,
+col=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+# Overall predictions
+segments(x0=defcautPred$pos,
+x1=defcautPred$pos,
+y0=defcautPred$lower,
+y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+abline(h=0, lty="31")
+close.screen(2)
+dev.off()
+with(sg$soundFact==0, table(genus, defcautBin))
+with(sg[sg$soundFact==0,], table(genus, defcautBin))
+1/8
+pdf("./plots/defcaut.pdf", height=3.5, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.1,0.95),
+c(0.45,0.95,0.1,0.95)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+# species predictions
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=16,
+col=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+# Overall predictions
+segments(x0=defcautPred$pos,
+x1=defcautPred$pos,
+y0=defcautPred$lower,
+y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+abline(h=0, lty="31")
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.125,0.95),
+c(0.45,0.95,0.125,0.95)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+# species predictions
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=16,
+col=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+# Overall predictions
+segments(x0=defcautPred$pos,
+x1=defcautPred$pos,
+y0=defcautPred$lower,
+y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+abline(h=0, lty="31")
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.135,0.965),
+c(0.45,0.95,0.135,0.965)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+# species predictions
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=16,
+col=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+# Overall predictions
+segments(x0=defcautPred$pos,
+x1=defcautPred$pos,
+y0=defcautPred$lower,
+y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+abline(h=0, lty="31")
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.135,0.965),
+c(0.45,0.95,0.135,0.965)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+abline(h=0, lty="31")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+# species predictions
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=21,
+bg=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+# Overall predictions
+segments(x0=defcautPred$pos,
+x1=defcautPred$pos,
+y0=defcautPred$lower,
+y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.135,0.965),
+c(0.45,0.95,0.135,0.965)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.25,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+abline(h=0, lty="31")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+segments(x0=defcautPred$pos, x1=defcautPred$pos,
+y0=defcautPred$lower, y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=21,
+bg=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.135,0.965),
+c(0.45,0.95,0.135,0.965)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=16,
+col=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.3,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+abline(h=0, lty="31")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+segments(x0=defcautPred$pos, x1=defcautPred$pos,
+y0=defcautPred$lower, y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=21,
+bg=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.135,0.965),
+c(0.45,0.95,0.135,0.965)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+points(y=contPred$fit, x=contPred$pos, pch=21,
+bg=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.3,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+abline(h=0, lty="31")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+segments(x0=defcautPred$pos, x1=defcautPred$pos,
+y0=defcautPred$lower, y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=21,
+bg=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+close.screen(2)
+dev.off()
+pdf("./plots/defcaut.pdf", height=3, width=5, useDingbats = FALSE)
+split.screen(rbind(c(0.1,0.35,0.135,0.965),
+c(0.45,0.95,0.135,0.965)))
+screen(1)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(0,1), ylim=c(0,0.8), xlab="", ylab="", axes=FALSE)
+axis(side=1, at=0.5, labels = "Control", line=0, mgp=c(3,0.6,0))
+axis(side=2)
+mtext(side=2, line=1.75, text="Probability of exhibiting defensive behaviour", las=0)
+par(xpd=NA)
+lines(y=rep(relative.axis.point(-0.04, "y"), 2), x=c(0.325,0.675), col="red")
+par(xpd=FALSE)
+segments(x0=contPred$pos, x1=contPred$pos,
+y0=contPred$lower, y1=contPred$upper, lwd=1,
+col=sg$colour[match(contPred$genus, sg$genus)])
+points(y=contPred$fit, x=contPred$pos, pch=21,
+bg=sg$colour[match(contPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+box()
+close.screen(1)
+screen(2)
+par(mar=c(0,0,0,0), las=1, ps=8, mgp=c(3,0.5,0), tcl=-0.25)
+plot(x=NULL, y=NULL, xlim=c(1.65,4.35), ylim=c(-0.3,0.8),
+xaxt="n", xlab="", ylab="", yaxs="i")
+abline(h=0, lty="31")
+axis(side=1, at=2:4, labels=c("0-150Hz", "150-300Hz", "300-450Hz"),
+line=0, mgp=c(3,0.6,0))
+test1 <- Sine(75, 0.035, 10000)
+test2 <- Sine(225, 0.035, 10000)
+test3 <- Sine(375, 0.035, 10000)
+par(xpd=NA)
+lines(y=relative.axis.point(-0.04, "y") + test1$sound / 100, x=seq(1.75,2.25, len=length(test1$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test2$sound / 100, x=seq(2.75,3.25, len=length(test2$sound)), col="red")
+lines(y=relative.axis.point(-0.04, "y") +test3$sound / 100, x=seq(3.75,4.25, len=length(test3$sound)), col="red")
+par(xpd=FALSE)
+mtext(side=2, line=1.5, text=expression(Delta*" Probability from control"), las=0)
+segments(x0=defcautPred$pos, x1=defcautPred$pos,
+y0=defcautPred$lower, y1=defcautPred$upper, lwd=1,
+col=sg$colour[match(defcautPred$genus, sg$genus)])
+points(y=defcautPred$fit,
+x=defcautPred$pos,
+pch=21,
+bg=sg$colour[match(defcautPred$genus, sg$genus)], lwd=0.5, cex=0.8)
+close.screen(2)
+dev.off()
+summary(defcautM1)
